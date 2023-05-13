@@ -1,0 +1,21 @@
+{{!-- Views/layouts/main.hbs --}}
+{{#> main}}
+
+{{!-- Display all posts --}}
+<div class="container-sm mx-auto">
+  {{!-- <h2 class="mb-5 text-center">All Blogs..</h2> --}}
+  {{#each posts}}
+  <div class="card mb-3">
+    <div class="card-header">
+      <h2 class="card-title">{{title}}</h2>
+      <p class="card-created-at">Posted by <span class="user">{{user.username}}</span> on <span class="time">{{formatDate createdAt}}</span></p>
+    </div>
+    <div class="card-body">
+      <p>{{content}}</p>
+      <a href="/posts/{{id}}" class="read-more">Read More</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/main}}
+
